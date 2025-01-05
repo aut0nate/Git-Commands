@@ -43,6 +43,36 @@ git config --global user.email "<emailaddress>"
 
 # Configure the default branch
 git config --global init.defaultBranch main
+
+# Enable autocorrect for Git commands
+git config --global help.autocorrect 1
+# Automatically correct minor typos in Git commands, e.g., "git staus" -> "git status"
+
+# Set the default editor for Git
+git config --global core.editor "code --wait"
+git config --global core.editor "nano -w"
+# Set the default editor to Visual Studio Code (or your preferred editor)
+# Run git config --global -e to open in your editor of choice
+
+# Enable color output in Git
+git config --global color.ui true
+# Enable colorful output for Git commands, making it easier to read and understand
+
+# Enable Git to ignore file mode changes
+git config --global core.fileMode false
+# Ignore file mode changes (e.g., executable bits) to avoid unnecessary commits
+
+# Set the default push behavior
+git config --global push.default simple
+# Set the default push behavior to "simple", which pushes the current branch to its upstream counterpart
+
+# Enable Git to use the credential manager
+git config --global credential.helper manager
+# Enable Git to use the credential manager to store and retrieve credentials
+
+# Set the default commit message format
+git config --global commit.template ~/.gitmessage
+# Set the default commit message format using a template file (~/.gitmessage)
 ```
 
 ## Repository Management Commands
