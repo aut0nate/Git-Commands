@@ -1,10 +1,12 @@
 # Git Commands Cheatsheet
 
-This repository contains a comprehensive list of Git commands, organised into categories for ease of reference.
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+This repository contains a comprehensive list of Git commands that I have learned along the way. I have organised this into categories for ease of reference.
 
 ---
 
-## Table of Contents
+## Contents
 
 - [General Information Commands](#general-information-commands)
 - [Configuration Commands](#configuration-commands)
