@@ -31,6 +31,8 @@ git help <command>
 git --version
 ```
 
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 ## Configuration Commands
 
 ```bash
@@ -77,6 +79,8 @@ git config --global commit.template ~/.gitmessage
 # Set the default commit message format using a template file (~/.gitmessage)
 ```
 
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 ## Repository Management Commands
 
 ```bash
@@ -95,6 +99,8 @@ git log
 # Check the logs of all commits and returns the output on one line
 git log --oneline
 ```
+
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
 ## Staging and Commit Commands
 
@@ -136,6 +142,8 @@ git commit --amend -m "New commit message"
 git commit --amend --author "name <email>"
 ```
 
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 ## Branch Management Commands
 
 ```bash
@@ -173,6 +181,8 @@ git merge -m "<message>" <nameofbranch>
 git branch -d --remote <nameofbranch>
 ```
 
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 ## Remote Repository Commands
 
 ```bash
@@ -208,6 +218,8 @@ git push --set-upstream origin <nameofbranch>
 git push origin --delete <oldbranchname>
 ```
 
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 ## Rebase and Reset Commands
 
 ```bash
@@ -233,3 +245,5 @@ git reset --mixed HEAD~n
 # Hard reset (moves HEAD and makes the index and working directory exactly match the reset commit)
 git reset --hard HEAD~n
 ```
+
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
