@@ -2,7 +2,7 @@
 
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-This repository contains a comprehensive list of Git commands that I have learned along the way. I have organised this into categories for ease of reference.
+This repository contains a collection of Git commands that I’ve found particularly useful as part of my learning process. I have grouped this into categories for easy reference.
 
 ---
 
