@@ -95,11 +95,17 @@ git status
 # Check status of current repository (compact)
 git status --short
 
-# Check the logs of all commits
+# Show the commit history
 git log
 
-# Check the logs of all commits and returns the output on one line
+# Show the commit history in a compact, one-line-per-commit format
 git log --oneline
+
+# Show the commit history in a compact, one-line-per-commit format, output directly to the terminal (not paged)
+git --no-pager log --oneline
+
+# Display the commit history as a graph, with each commit on one line, showing all branches and references (great for visualising branch structure)
+git log --oneline --graph --all --decorate
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
