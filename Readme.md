@@ -145,38 +145,6 @@ git commit --amend --author "name <email>"
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
-## Diff and Comparison Commands
-
-```bash
-# Show unstaged changes in your working directory  
-git diff
-
-# Show staged changes (what will be committed)  
-git diff --cached
-git diff --staged
-
-# Compare two branches  
-git diff main <branch>
-  
-# Compare a specific file between two branches  
-git diff main <branch> -- <file>
-
-# Compare between two commits 
-git diff <commit1> <commit2>
-
-# Compare a specific file between two commits 
-git diff <commit1> <commit2> -- <file>
-
-# See all changes since last commit (both staged and unstaged)  
-git diff HEAD
-  
-# Word-level diff (more readable for prose)
-git diff --color-words
-```
-
-
-[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
-
 ## Branch Management Commands
 
 ```bash
@@ -215,6 +183,78 @@ git branch -d --remote <nameofbranch>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
+## Diff and Comparison Commands
+
+```bash
+# Show unstaged changes in your working directory  
+git diff
+
+# Show staged changes (what will be committed)  
+git diff --cached
+git diff --staged
+
+# Compare two branches  
+git diff main <branch>
+  
+# Compare a specific file between two branches  
+git diff main <branch> -- <file>
+
+# Compare between two commits 
+git diff <commit1> <commit2>
+
+# Compare a specific file between two commits 
+git diff <commit1> <commit2> -- <file>
+
+# See all changes since last commit (both staged and unstaged)  
+git diff HEAD
+  
+# Word-level diff (more readable for prose)
+git diff --color-words
+```
+
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
+## Stash Commands
+
+```bash
+# Temporarily save changes that are not ready to be committed
+git stash
+
+# Stash changes with a descriptive message  
+git stash -m "<Message>"
+
+# List all stashes  
+git stash list
+
+# Apply the most recent stash and remove it from the stash list  
+git stash pop
+
+# Apply a specific stash by index and remove it from the stash list  
+git stash pop stash@{0}
+git stash pop 0
+
+# Apply a specific stash without removing it from the stash list  
+git stash apply stash@{0}
+git stash apply 0
+
+# Delete a specific stash without applying it  
+git stash drop stash@{0}
+git stash drop 0
+
+# Include untracked files in the stash  
+git stash -u
+git stash --include-untracked
+
+# Clear all stashes  
+git stash clear
+
+# Create a new branch from a stash  
+git stash branch stash@{0}
+```
+
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 
 ## Remote Repository Commands
 
