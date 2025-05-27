@@ -156,10 +156,10 @@ git diff --cached
 git diff --staged
 
 # Compare two branches  
-git diff main feature/contact-section
+git diff main <branch>
   
 # Compare a specific file between two branches  
-git diff main feature/contact-section -- index.html
+git diff main <branch> -- file
 
 # See all changes since last commit (both staged and unstaged)  
 git diff HEAD
