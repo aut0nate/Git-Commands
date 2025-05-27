@@ -159,10 +159,13 @@ git diff --staged
 git diff main <branch>
   
 # Compare a specific file between two branches  
-git diff main <branch> -- file
+git diff main <branch> -- <file>
 
 # Compare between two commits 
 git diff <commit1> <commit2>
+
+# Compare a specific file between two commits 
+git diff <commit1> <commit2> -- <file>
 
 # See all changes since last commit (both staged and unstaged)  
 git diff HEAD
