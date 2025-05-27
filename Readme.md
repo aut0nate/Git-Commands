@@ -13,6 +13,7 @@ This repository contains a collection of Git commands that I’ve found particul
 - [Repository Management Commands](#repository-management-commands)
 - [Staging and Commit Commands](#staging-and-commit-commands)
 - [Branch Management Commands](#branch-management-commands)
+- [Diff and Comaparison Commands](#diff-and-comparison-commands)
 - [Remote Repository Commands](#remote-repository-commands)
 - [Rebase and Reset Commands](#rebase-and-reset-commands)
   
