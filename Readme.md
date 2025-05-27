@@ -144,6 +144,32 @@ git commit --amend --author "name <email>"
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
+## Diff and Comparison Commands
+
+```bash
+# Show unstaged changes in your working directory  
+git diff
+
+# Show staged changes (what will be committed)  
+git diff --cached
+git diff --staged
+
+# Compare two branches  
+git diff main feature/contact-section
+  
+# Compare a specific file between two branches  
+git diff main feature/contact-section -- index.html
+
+# See all changes since last commit (both staged and unstaged)  
+git diff HEAD
+  
+# Word-level diff (more readable for prose)
+git diff --color-words
+```
+
+
+[⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
+
 ## Branch Management Commands
 
 ```bash
