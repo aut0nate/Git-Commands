@@ -155,6 +155,9 @@ git commit --amend --author "name <email>"
 ## Branch Management Commands
 
 ```bash
+# List all local branches  
+git branch
+
 # Create a new branch
 git branch <nameofbranch>
 
@@ -167,6 +170,12 @@ git branch -d <nameofbranch>
 # Force deletes a branch
 git branch -D <nameofbranch>
 
+# List all remote branches  
+git branch -r  
+  
+# List all branches, local and remote  
+git branch -a
+
 # Switches branch
 git switch <nameofbranch>
 
@@ -178,6 +187,13 @@ git checkout <nameofbranch>
 
 # Creates and switches to a new branch
 git checkout -b <nameofbranch>
+
+# Switch to a specific commit in the repository's history (detached HEAD state)
+git checkout <commithash>
+
+# Switch to the 'main' branch, or use '-' to switch to your previous branch
+git switch main
+git switch -
 
 # Merge a branch
 git merge <nameofbranch>
