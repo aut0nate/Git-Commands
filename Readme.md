@@ -106,6 +106,39 @@ git --no-pager log --oneline
 
 # Display the commit history as a graph, with each commit on one line, showing all branches and references (great for visualising branch structure)
 git log --oneline --graph --all --decorate
+
+# Show only commits authored by a specific user
+git log --author="name"
+
+# Show only commits committed by a specific user
+git log --committer="name"
+
+# Show commits by a specific user in the last hour
+git log --author="name" --since="1 hour"
+
+# Show commits by a specific user in the last day 
+git log --author="name" --since="1 day"
+
+# Show commits by a specific user in the last week  
+git log --author="name" --since="1 week"
+
+# Show commits by a specific user in the last month 
+git log --author="name" --since="1 month"
+
+# Show the parent commits of a given commit (useful for merge commits)
+git log --pretty="format:%P" -n 1 <hash>
+
+# Show only the names of the files changed in a specific commit
+git show --pretty="format:" --name-only <hash>
+
+# Show the changes (diff) for a specific file in a specific commit
+git show <hash> -- <file>
+
+# Show the details and changes of the most recent commit
+git show HEAD
+
+# Show the diff with word-level highlighting (useful for spotting small changes)
+git show --word-diff <hash>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -148,6 +181,7 @@ git commit --amend -m "New commit message"
 
 # Amend the last commit and change the author details
 git commit --amend --author "name <email>"
+
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -200,9 +234,6 @@ git merge <nameofbranch>
 
 # Merge a branch with a message
 git merge -m "<message>" <nameofbranch>
-
-# Deletes the local and remote branch
-git branch -d --remote <nameofbranch>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -311,7 +342,10 @@ git push origin -u <newbranchname>
 git push --set-upstream origin <nameofbranch>
 
 # Delete a branch on the remote repo
-git push origin --delete <oldbranchname>
+git push origin --delete <nameofbranch>
+
+# Force push the amended commit whilst checking the remote hasn't changed unexpectedly
+git push --force-with-lease
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
