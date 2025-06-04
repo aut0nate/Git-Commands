@@ -128,6 +128,15 @@ git log --author="name" --since="1 month"
 # Show the parent commits of a given commit (useful for merge commits)
 git log --pretty="format:%P" -n 1 <commithash>
 
+# Show the full history of HEAD movements (commits, resets, checkouts, etc.)
+git reflog
+
+# Show the reflog for a specific branch (e.g., main)
+git reflog show main
+
+# Show the last 5 entries in the reflog
+git reflog -5
+
 # Show only the names of the files changed in a specific commit
 git show --pretty="format:" --name-only <commithash>
 
@@ -342,7 +351,8 @@ git push --set-upstream origin <branch>
 # Delete a branch on the remote repo
 git push origin --delete <branch>
 
-# Force push the amended commit whilst checking the remote hasn't changed unexpectedly
+# Force-push your local branch to the remote. If your intention is to make the remote match your local history
+# Be careful—this will overwrite the remote branch and can affect collaborators
 git push --force-with-lease
 ```
 
@@ -370,7 +380,7 @@ git revert <commithash>
 git revert HEAD
 
 # Revert a commit without automatically creating a commit (allows you to edit the revert message)
-git revert --no-commit <commit-hash>
+git revert --no-commit <commithash>
 
 # Rebase the current branch on top of the specified branch
 git rebase <branch>
