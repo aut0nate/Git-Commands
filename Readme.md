@@ -16,7 +16,7 @@ This repository contains a collection of Git commands that I’ve found particul
 - [Diff and Comaparison Commands](#diff-and-comparison-commands)
 - [Stash Commands](#stash-commands)
 - [Remote Repository Commands](#remote-repository-commands)
-- [Rebase and Reset Commands](#rebase-and-reset-commands)
+- [Reset, Revert & Rebase Commands](#reset-revert--rebase-commands)
   
 ---
 
@@ -126,19 +126,19 @@ git log --author="name" --since="1 week"
 git log --author="name" --since="1 month"
 
 # Show the parent commits of a given commit (useful for merge commits)
-git log --pretty="format:%P" -n 1 <hash>
+git log --pretty="format:%P" -n 1 <commithash>
 
 # Show only the names of the files changed in a specific commit
-git show --pretty="format:" --name-only <hash>
+git show --pretty="format:" --name-only <commithash>
 
 # Show the changes (diff) for a specific file in a specific commit
-git show <hash> -- <file>
+git show <commithash> -- <file>
 
 # Show the details and changes of the most recent commit
 git show HEAD
 
 # Show the diff with word-level highlighting (useful for spotting small changes)
-git show --word-diff <hash>
+git show --word-diff <commithash>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -153,7 +153,7 @@ git add <file>
 git mv <oldfile> <newfile>
 
 # Remove files from index
-git rm <file>
+git rm -f <file>
 
 # Remove files from staging
 git restore --staged <file>
@@ -181,7 +181,6 @@ git commit --amend -m "New commit message"
 
 # Amend the last commit and change the author details
 git commit --amend --author "name <email>"
-
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -193,16 +192,16 @@ git commit --amend --author "name <email>"
 git branch
 
 # Create a new branch
-git branch <nameofbranch>
+git branch <branch>
 
 # Renames a branch
 git branch -m <newbranchname>
 
 # Deletes a branch
-git branch -d <nameofbranch>
+git branch -d <branch>
 
 # Force deletes a branch
-git branch -D <nameofbranch>
+git branch -D <branch>
 
 # List all remote branches  
 git branch -r  
@@ -211,16 +210,16 @@ git branch -r
 git branch -a
 
 # Switches branch
-git switch <nameofbranch>
+git switch <branch>
 
 # Creates and switches to a new branch
-git switch -c <nameofbranch>
+git switch -c <branch>
 
 # Select a branch
-git checkout <nameofbranch>
+git checkout <branch>
 
 # Creates and switches to a new branch
-git checkout -b <nameofbranch>
+git checkout -b <branch>
 
 # Switch to a specific commit in the repository's history (detached HEAD state)
 git checkout <commithash>
@@ -230,10 +229,10 @@ git switch main
 git switch -
 
 # Merge a branch
-git merge <nameofbranch>
+git merge <branch>
 
 # Merge a branch with a message
-git merge -m "<message>" <nameofbranch>
+git merge -m "<message>" <branch>
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
@@ -255,10 +254,10 @@ git diff main <branch>
 git diff main <branch> -- <file>
 
 # Compare between two commits 
-git diff <commit1> <commit2>
+git diff <commithash1> <commithash2>
 
 # Compare a specific file between two commits 
-git diff <commit1> <commit2> -- <file>
+git diff <commithash1> <commithash2> -- <file>
 
 # See all changes since last commit (both staged and unstaged)  
 git diff HEAD
@@ -309,7 +308,6 @@ git stash branch stash@{0}
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
-
 ## Remote Repository Commands
 
 ```bash
@@ -332,17 +330,17 @@ git remote add origin <remoteurl>
 git remote remove origin
 
 # Push local repository to remote repository
-git push origin <nameofbranch>
+git push origin <branch>
 
 # Pushes a renamed branch to the remote repo
 git push origin -u <newbranchname>
 
 # Push the local 'main' branch to the remote repository named 'origin'
 # and set it as the upstream branch, establishing a link for future pushes and pulls
-git push --set-upstream origin <nameofbranch>
+git push --set-upstream origin <branch>
 
 # Delete a branch on the remote repo
-git push origin --delete <nameofbranch>
+git push origin --delete <branch>
 
 # Force push the amended commit whilst checking the remote hasn't changed unexpectedly
 git push --force-with-lease
@@ -350,21 +348,11 @@ git push --force-with-lease
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
 
-## Rebase and Reset Commands
+## Reset, Revert & Rebase Commands
 
 ```bash
-# Rebase the current branch on top of the specified branch
-git rebase <branch>
-
-# Start an interactive rebase for the last n commits
-git rebase -i HEAD~n
-
-# Rebase your feature branch onto the tip of the master branch
-git fetch origin
-git rebase origin/master
-
 # Reset the current HEAD to the specified commit, keeping all changes in the staging area
-git reset --soft <commit-hash>
+git reset --soft <commithash>
 
 # Soft reset (moves HEAD to another commit, but keeps the index and working directory)
 git reset --soft HEAD~n
@@ -374,6 +362,25 @@ git reset --mixed HEAD~n
 
 # Hard reset (moves HEAD and makes the index and working directory exactly match the reset commit)
 git reset --hard HEAD~n
+
+# Create a new commit that undoes the changes from a specific commit
+git revert <commithash>
+
+# Revert the most recent commit by creating a new commit that undoes its changes
+git revert HEAD
+
+# Revert a commit without automatically creating a commit (allows you to edit the revert message)
+git revert --no-commit <commit-hash>
+
+# Rebase the current branch on top of the specified branch
+git rebase <branch>
+
+# Start an interactive rebase for the last n commits
+git rebase -i HEAD~n
+
+# Rebase your feature branch onto the tip of the master branch
+git fetch origin
+git rebase origin/master
 ```
 
 [⬆ ʀᴇᴛᴜʀɴ ᴛᴏ ᴄᴏɴᴛᴇɴᴛꜱ](#contents)
